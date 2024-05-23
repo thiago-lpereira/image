@@ -27,7 +27,7 @@ jobs:
 
     - name: EXECUTAR TESTES
       run: |
-        coverage run -m app_test.py
+        coverage run -m app_test
 
     - name: Test with pytest
       run: |
