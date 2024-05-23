@@ -29,9 +29,6 @@ jobs:
       run: |
         coverage run -m app_test
 
-    - name: Test with pytest
-      run: |
-        pytest
 
     - name: reporta
       run: |
