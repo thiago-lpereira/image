@@ -1,4 +1,4 @@
-name: App python teste #nome do teste
+name: Python Application  #nome do teste
 
  # trigger
 on: 
@@ -48,6 +48,6 @@ jobs:
         image: thiagolgpereira/image
         tags: v1, latest
         registry: docker.io
-        dockerfile: dockerfile.ci
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
