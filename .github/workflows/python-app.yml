@@ -38,7 +38,9 @@ jobs:
  
     - name: Results
       run: coverage report
-
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    - name: TRYING TO PUSH IT 
     - uses: mr-smithers-excellent/docker-build-push@v6.4
       name: Build & push Docker image
       with:
