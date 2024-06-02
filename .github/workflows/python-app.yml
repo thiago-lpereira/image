@@ -44,7 +44,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6.4
       with:
         image: thiagolgpereira/image
-        tags: 1.0
+        tags: latest,${{ github.run_number }}
         registry: docker.io
         dockerfile: dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
