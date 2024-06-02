@@ -38,8 +38,8 @@ jobs:
  
     - name: Results
       run: coverage report
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+  #  - name: Set up Docker Buildx #useless piece of s that i did just because i thought my dockerhub username was thiagolgpereira instead of thiagolpereira (wasted 3 entire hours)
+  #    uses: docker/setup-buildx-action@v2
     - name: TRYING TO PUSH IT 
       uses: mr-smithers-excellent/docker-build-push@v6.4
       with:
