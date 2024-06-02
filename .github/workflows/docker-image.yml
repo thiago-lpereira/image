@@ -6,7 +6,7 @@ name: Build & push Docker image
  with:
 image: thiagolgpereira/image
 tags: v1, latest
-registry: registry-url.io
+registry: Docker.io
 dockerfile: Dockerfile.ci
 username: ${{ secrets.DOCKER_USERNAME }}
 password: ${{ secrets.DOCKER_PASSWORD }}
