@@ -1,21 +1,25 @@
-name: Python application
- 
-on:
-  push:
-    branches: [ "main" ]
+name: App python teste #nome do teste
+
+ # trigger
+on: 
+
+  push: # what will trigger this action
+    branches: [ "main" ] # e qual a branch que vai gerar o gatilho (["*"] todas as branches)
   pull_request:
     branches: [ "main" ]
  
 permissions:
   contents: read
  
+# define o que ele vai verificar
 jobs:
   build:
  
     runs-on: ubuntu-latest
  
+    # passos a serem executados ex:(rodar o requirements, rodar o python, rodar o banco)
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2 # entra na pasta do meu projeto
     - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
@@ -37,3 +41,13 @@ jobs:
  
     - name: Results
       run: coverage report
+
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
+      with:
+        image: thiagolgpereira/image
+        tags: v1, latest
+        registry: docker.io
+        dockerfile: dockerfile.ci
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
